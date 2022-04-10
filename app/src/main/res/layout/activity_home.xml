@@ -19,7 +19,7 @@
             android:layout_marginTop="40dp"
             android:background="@color/black"
             android:scaleType="fitXY"
-w            android:src="@mipmap/ic_launcher"
+            android:src="@mipmap/ic_launcher"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
