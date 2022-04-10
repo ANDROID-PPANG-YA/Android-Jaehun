@@ -44,9 +44,9 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(R.layout.activity_sig
     private fun initLoginBtnClickListener() {
         binding.btnSignInLogin.setOnClickListener {
             if (binding.etSignInId.text.isEmpty() || binding.etSignInPw.text.isEmpty()) {
-                Toast.makeText(this, "아이디/비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.sign_in_toast_fail), Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.sign_up_toast_success), Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
             }
