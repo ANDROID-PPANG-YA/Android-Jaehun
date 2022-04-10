@@ -1,10 +1,12 @@
 package sopt.android.assignment.ui.signup
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import sopt.android.assignment.R
 import sopt.android.assignment.databinding.ActivitySignUpBinding
 import sopt.android.assignment.ui.base.BaseActivity
+import sopt.android.assignment.ui.signin.SignInActivity
 
 class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sign_up) {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +20,11 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sig
             if (binding.etSignUpName.text.isEmpty() || binding.etSignUpId.text.isEmpty() || binding.etSignUpPw.text.isEmpty()) {
                 Toast.makeText(this, "입력되지 않은 정보가 있습니다", Toast.LENGTH_SHORT).show()
             } else {
+                val intent = Intent(this@SignUpActivity, SignInActivity::class.java)
+                intent
+                    .putExtra("id", binding.etSignUpId.text.toString())
+                    .putExtra("pw", binding.etSignUpPw.text.toString())
+                setResult(RESULT_OK, intent)
                 finish()
             }
         }
