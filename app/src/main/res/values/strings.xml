@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">SOPT30thAndroidAssigment</string>
+    <string name="home_name">이름 : 조재훈</string>
+    <string name="home_age">나이 : 27</string>
+    <string name="home_mbti">MBTI : INFJ</string>
+    <string name="home_introduction">안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n안녕하세요 안드로이드 파트 조재훈입니다!\n</string>
+    <string name="sign_in_pw">비밀번호</string>
+    <string name="sign_in_pw_hint">비밀번호를 입력해주세요.</string>
+    <string name="sign_in_sign_up_btn">회원가입</string>
+    <string name="sign_in_login_btn">로그인</string>
+    <string name="sign_in_id_hint">아이디를 입력해주세요.</string>
+    <string name="sign_in_id">아이디</string>
+    <string name="sign_in_title">SOPT</string>
+    <string name="sign_up_submit_btn">회원가입 완료</string>
+    <string name="sign_up_pw_hint">비밀번호를 입력해주세요.</string>
+    <string name="sign_up_pw">비밀번호</string>
+    <string name="sign_up_id_hint">아이디를 입력해주세요.</string>
+    <string name="sign_up_id">아이디</string>
+    <string name="sign_up_name_hint">이름을 입력해주세요.</string>
+    <string name="sign_up_name">이름</string>
+    <string name="sign_up_title">회원가입</string>
+    <string name="sign_in_toast_fail">아이디/비밀번호를 확인해주세요</string>
+    <string name="sign_up_toast_success">로그인 성공</string>
+    <string name="sign_up_toast_fail">입력되지 않은 정보가 있습니다</string>
 </resources>
