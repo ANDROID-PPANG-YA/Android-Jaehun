@@ -159,3 +159,89 @@
     추후 공개 예정...
 
 <hr/>
+
+# Week 2
+
+## Level 1
+
+- HomeActivity.kt
+  - 각 Fragment로 이동하는 Button과 FragmentContainerView 추가
+  
+    ```xml
+      <Button
+        android:id="@+id/btn_home_follower_list"
+          ...
+        />
+
+      <Button
+        android:id="@+id/btn_home_repository_list"
+          ...
+        />
+      
+      <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/container_home_list"
+          ...
+        />
+    ```
+    
+  - 각 버튼을 클릭 시 Fragment 이동
+    
+    ```kt
+        private fun initTransactionEvent() {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.container_home_list, HomeFollowerFragment()).commit()
+        }
+
+        private fun initFollowerListBtnClickListener() {
+            binding.btnHomeFollowerList.setOnClickListener {
+                if (state != FOLLOWER_LIST) {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container_home_list, HomeFollowerFragment()).commit()
+                    state = FOLLOWER_LIST
+                }
+            }
+        }
+
+        private fun initRepositoryListBtnClickListener() {
+            binding.btnHomeRepositoryList.setOnClickListener {
+                if (state != REPOSITORY_LIST) {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container_home_list, HomeRepositoryFragment()).commit()
+                    state = REPOSITORY_LIST
+                }
+            }
+        }
+    ```
+    
+- HomeFollowerFragment, HomeFollowerRVAdapter, Follower 생성
+  - HomeFollowerFragment에 리사이클러뷰 생성
+      
+    ```xml
+      <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_home_follower_list"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+          ...
+        />
+    ```
+
+- HomeRepositoryFragment, HomeRepositoryRVAdapter, Repository 생성 
+  - HomeRepositoryFragment에 리사이클러뷰 생성, GridLayoutManager 
+      
+    ```xml
+      <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_home_repository_list"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+          ...
+        />
+    ```
+
+## Level 2
+
+    난 쓰레기야...
+
+## Level 3
+    
+    쓰레기야 ...
+
+<hr/>
