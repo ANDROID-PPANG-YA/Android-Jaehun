@@ -1,26 +1,26 @@
-package sopt.android.assignment.ui.home
+package sopt.android.assignment.ui.home.profile
 
 import android.os.Bundle
 import android.view.View
 import sopt.android.assignment.R
-import sopt.android.assignment.databinding.FragmentHomeRepositoryBinding
+import sopt.android.assignment.databinding.FragmentProfileRepositoryBinding
 import sopt.android.assignment.ui.base.BaseFragment
+import sopt.android.assignment.ui.home.profile.adapter.ProfileRepositoryRVAdapter
 
-class HomeRepositoryFragment :
-    BaseFragment<FragmentHomeRepositoryBinding>(R.layout.fragment_home_repository) {
-    private lateinit var homeRepositoryRVAdapter: HomeRepositoryRVAdapter
+class ProfileRepositoryFragment :
+    BaseFragment<FragmentProfileRepositoryBinding>(R.layout.fragment_profile_repository) {
+    private lateinit var profileRepositoryRVAdapter: ProfileRepositoryRVAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         initAdapter()
     }
 
     private fun initAdapter() {
-        homeRepositoryRVAdapter = HomeRepositoryRVAdapter()
-        binding.rvHomeRepositoryList.adapter = homeRepositoryRVAdapter
+        profileRepositoryRVAdapter = ProfileRepositoryRVAdapter()
+        binding.rvHomeRepositoryList.adapter = profileRepositoryRVAdapter
 
-        homeRepositoryRVAdapter.repositoryList.addAll(
+        profileRepositoryRVAdapter.repositoryList.addAll(
             listOf(
                 Repository("안드로이드 과제 레포지토리", "안드로이드 과제"),
                 Repository("iOS 과제 레포지토리", "iOS 과제"),

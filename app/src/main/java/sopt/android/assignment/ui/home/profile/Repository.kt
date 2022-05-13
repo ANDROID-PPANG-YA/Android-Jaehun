@@ -1,4 +1,4 @@
-package sopt.android.assignment.ui.home
+package sopt.android.assignment.ui.home.profile
 
 data class Repository(
     val title : String = "",
