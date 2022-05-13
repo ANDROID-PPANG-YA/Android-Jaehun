@@ -1,12 +1,13 @@
-package sopt.android.assignment.ui.home
+package sopt.android.assignment.ui.home.profile.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import sopt.android.assignment.databinding.ItemFollowerListBinding
+import sopt.android.assignment.ui.home.profile.Follower
 
-class HomeFollowerRVAdapter() :
-    RecyclerView.Adapter<HomeFollowerRVAdapter.HomeFollowerViewHolder>() {
+class ProfileFollowerRVAdapter() :
+    RecyclerView.Adapter<ProfileFollowerRVAdapter.HomeFollowerViewHolder>() {
     val followerList = mutableListOf<Follower>()
 
     class HomeFollowerViewHolder(private val binding: ItemFollowerListBinding) :

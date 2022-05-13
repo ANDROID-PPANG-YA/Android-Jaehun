@@ -6,7 +6,7 @@
 
         <variable
             name="follower"
-            type="sopt.android.assignment.ui.home.Follower" />
+            type="sopt.android.assignment.ui.home.profile.Follower" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,12 +1,13 @@
-package sopt.android.assignment.ui.home
+package sopt.android.assignment.ui.home.profile.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import sopt.android.assignment.databinding.ItemRepositoryListBinding
+import sopt.android.assignment.ui.home.profile.Repository
 
-class HomeRepositoryRVAdapter() :
-    RecyclerView.Adapter<HomeRepositoryRVAdapter.HomeRepositoryViewHolder>() {
+class ProfileRepositoryRVAdapter() :
+    RecyclerView.Adapter<ProfileRepositoryRVAdapter.HomeRepositoryViewHolder>() {
     val repositoryList = mutableListOf<Repository>()
 
     class HomeRepositoryViewHolder(private val binding: ItemRepositoryListBinding) :
