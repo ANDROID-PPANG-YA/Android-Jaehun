@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
 import sopt.android.assignment.R
+import sopt.android.assignment.data.local.LoginSharedPreferences
 import sopt.android.assignment.databinding.FragmentProfileBinding
 import sopt.android.assignment.ui.base.BaseFragment
 import sopt.android.assignment.ui.home.viewmodel.HomeViewModel
@@ -16,6 +17,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_p
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initTransactionEvent()
+        initLogoutBtnClickListener()
         initFollowerListBtnClickListener()
         initRepositoryListBtnClickListener()
         initProfileImg()
@@ -32,6 +34,13 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_p
         binding.btnProfileFollowerList.isSelected = true
         requireActivity().supportFragmentManager.beginTransaction()
             .add(R.id.container_home_list, ProfileFollowerFragment()).commit()
+    }
+
+    private fun initLogoutBtnClickListener() {
+        binding.btnProfileLogout.setOnClickListener {
+            LoginSharedPreferences.setLogOut(requireContext())
+            requireActivity().finish()
+        }
     }
 
     private fun initFollowerListBtnClickListener() {
