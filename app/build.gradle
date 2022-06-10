@@ -50,6 +50,7 @@ dependencies {
     // ViewModel(by viewModels 사용용도)
     implementation "androidx.fragment:fragment-ktx:1.4.1"
     implementation 'androidx.activity:activity-ktx:1.4.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
 
     //glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'

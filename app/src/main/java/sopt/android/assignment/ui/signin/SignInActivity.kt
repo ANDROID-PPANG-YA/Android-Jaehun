@@ -10,6 +10,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import sopt.android.assignment.R
+import sopt.android.assignment.data.local.LoginSharedPreferences
 import sopt.android.assignment.data.remote.RetrofitBuilder
 import sopt.android.assignment.data.remote.entity.request.SignInRequest
 import sopt.android.assignment.data.remote.entity.response.SignInResponse
@@ -17,6 +18,7 @@ import sopt.android.assignment.databinding.ActivitySignInBinding
 import sopt.android.assignment.ui.base.BaseActivity
 import sopt.android.assignment.ui.home.HomeActivity
 import sopt.android.assignment.ui.signup.SignUpActivity
+import sopt.android.assignment.util.showToast
 
 class SignInActivity : BaseActivity<ActivitySignInBinding>(R.layout.activity_sign_in) {
     private lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
@@ -24,9 +26,33 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(R.layout.activity_sig
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        initAutoLogin()
+        initAutoLoginBtnClickListener()
         initActivityResultListener()
         initSignUpBtnClickListener()
         initLoginBtnClickListener()
+    }
+
+    private fun initAutoLogin() {
+        LoginSharedPreferences.init(this)
+        isAutoLogin()
+    }
+
+    private fun isAutoLogin() {
+        if (LoginSharedPreferences.getAutoLogin()) {
+            showToast("자동 로그인 되었습니다.")
+            startActivity(Intent(this@SignInActivity, HomeActivity::class.java))
+        }
+    }
+
+    private fun initAutoLoginBtnIsChecked() {
+        binding.btnSignInAutoLogin.isChecked = LoginSharedPreferences.getAutoLogin()
+    }
+
+    private fun initAutoLoginBtnClickListener() {
+        binding.btnSignInAutoLogin.setOnCheckedChangeListener { _, isChecked ->
+            LoginSharedPreferences.setAutoLogin(isChecked)
+        }
     }
 
     private fun initActivityResultListener() {
@@ -55,9 +81,6 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(R.layout.activity_sig
                     .show()
             } else {
                 signinNetwork()
-//                Toast.makeText(this, getString(R.string.sign_up_toast_success), Toast.LENGTH_SHORT).show()
-//                val intent = Intent(this, HomeActivity::class.java)
-//                startActivity(intent)
             }
         }
     }
@@ -90,5 +113,10 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(R.layout.activity_sig
                 Log.e("NetworkTest", "error:$t")
             }
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        initAutoLoginBtnIsChecked()
     }
 }

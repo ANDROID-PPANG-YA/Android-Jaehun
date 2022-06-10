@@ -36,6 +36,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_sign_in_title" />
 
+        <TextView
+            android:id="@+id/tv_sign_in_auto_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_in_auto_login"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_sign_in_id"
+            app:layout_constraintEnd_toEndOf="@id/et_sign_in_id"
+            app:layout_constraintTop_toTopOf="@id/tv_sign_in_id" />
+
+        <CheckBox
+            android:id="@+id/btn_sign_in_auto_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/tv_sign_in_auto_login"
+            app:layout_constraintBottom_toBottomOf="@id/tv_sign_in_auto_login"
+            app:layout_constraintEnd_toStartOf="@id/tv_sign_in_auto_login"/>
+
         <EditText
             android:id="@+id/et_sign_in_id"
             android:layout_width="0dp"
